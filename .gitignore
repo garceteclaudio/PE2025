@@ -1,0 +1,8 @@
+# Excluir todos los archivos .exe en cualquier directorio
+*.exe
+
+# Excluir archivos .exe en directorios específicos (opcional)
+# /ruta/especifica/*.exe
+
+# Excluir la carpeta .vscode (configuraciones de VS Code)
+.vscode/
