@@ -7,6 +7,7 @@ using namespace std;
 // propuestas para llevar a cabo el cálculo:
 // a) una función que, según un parámetro de opción, calcule el cuadrado o cubo de un número (mediante la suma de impares).
 // b) un procedimiento que, utilizando la función del ítem a, calcule el cubo y cuadrado de un número ingresado por el usuario.
+
 // Considera que el programa admitirá tanto valores positivos como negativos para realizar el cálculo. Indica el pasaje de
 // parámetros utilizado.
 
@@ -64,9 +65,15 @@ void ingreso(int &num, char &op)
         cout << "Ingrese [c] CUADRADO - [p] CUBO" << endl;
         cin >> op;
         opcion = (op == 'c') || (op == 'p');
-        positivo = num > 0;
-    } while (!(positivo && opcion));
+    } while (!(opcion));
+
+    if (num < 0)
+    {
+        num = num * (-1);
+    }
+
     cout << "El numero es :" << num << endl;
+
     if (op == 'c')
     {
         cout << "Selecciono CUADRADO" << endl;
