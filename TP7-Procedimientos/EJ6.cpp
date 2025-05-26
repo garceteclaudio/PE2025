@@ -9,13 +9,18 @@ using namespace std;
 //  b) un procedimiento que calcule la potencia (mediante productos sucesivos). ¿Cómo devuelve el resultado?
 
 void ingreso(int &base, int &expo);
+// Pasaje por valor
 int calcular_potencia(int base, int exponente);
+// Pasaje por referencia
 void calcular_potencia_procedimiento(int base, int exponente, int &potencia);
 main()
 {
-    int base, expo;
+    int base, expo, potencia;
     ingreso(base, expo);
-    cout << base << "^" << expo << "=" << calcular_potencia(base, expo) << endl;
+    cout << "[Funcion] " << base << "^" << expo << "=" << calcular_potencia(base, expo) << endl;
+
+    calcular_potencia_procedimiento(base, expo, potencia);
+    cout << "[Procedimiento]" << base << "^" << expo << "=" << potencia << endl;
 }
 
 void ingreso(int &base, int &expo)
@@ -42,4 +47,15 @@ int calcular_potencia(int base, int exponente)
         cont = cont + 1;
     }
     return pot;
+}
+void calcular_potencia_procedimiento(int base, int exponente, int &potencia)
+{
+    int cont = 1;
+    potencia = 1;
+    // 2^4= 2*2*2*2=16
+    while (cont <= exponente)
+    {
+        potencia = potencia * base;
+        cont = cont + 1;
+    }
 }
